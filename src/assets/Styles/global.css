@@ -1,0 +1,101 @@
+:root {
+  --luxury-black: #0a0a0a;
+  --deep-black: #111;
+  --soft-black: #1a1a1a;
+  --luxury-orange: #ff6b35;
+  --gold-orange: #ff9e1b;
+  --text-white: #ffffff;
+  --text-light: #f1f1f1;
+  --text-gray: #aaaaaa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--luxury-black);
+  color: var(--text-white);
+}
+
+/* Main app container */
+.luxury-app {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+/* Sidebar fixed on left */
+.luxury-sidebar {
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  margin-left: 280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 280px);
+}
+
+/* Navbar at top */
+.luxury-navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+/* Dashboard content container */
+.dashboard-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "stats stats"
+    "properties activity";
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Stats grid at top */
+.stats-grid {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Property cards section */
+.luxury-properties {
+  grid-area: properties;
+  width: 100%;
+}
+
+/* Activity section */
+.luxury-activity {
+  grid-area: activity;
+  width: 100%;
+}
